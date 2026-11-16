@@ -1,0 +1,25 @@
+# React frontend
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+
+# Python backend
+backend/__pycache__/
+backend/*.py[cod]
+backend/venv/
+backend/.venv/
+backend/env/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+#IDE files
+.vscode/
+
+# Operating system files
+.DS_Store
+Thumbs.db
