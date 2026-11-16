@@ -42,3 +42,14 @@ def get_all_characters(limit: int = Query(100, ge=1, le=500), offset: int = Quer
     characters = db.scalars(statement).all()
 
     return characters
+
+# Retrieve a single character
+@app.get("/api/characters/{character_id}", response_model = CharacterRead)
+def get_character(character_id: int, db: Session = Depends(get_db));
+
+    character = db.get(Character, character_id)
+
+    if character is None:
+        raise HTTPException(status_code = 404, detail = "Character not found")
+
+    return character
